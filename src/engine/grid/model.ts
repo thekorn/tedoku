@@ -12,7 +12,7 @@ export default class CellMap {
     return this.map.get(key.toString());
   }
 
-  clear() {
+  clear(): void {
     this.map.clear();
   }
 
@@ -24,7 +24,7 @@ export default class CellMap {
     return this.map.has(key.toString());
   }
 
-  get size() {
+  get size(): number {
     return this.map.size;
   }
 
@@ -35,7 +35,7 @@ export default class CellMap {
   hasSameValuesAs(otherCallMap: CellMap): boolean {
     let result = true;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function isEqual(value: 0 | 1, key: string, _map: any) {
+    function isEqual(value: 0 | 1, key: string, _map: never) {
       if (!otherCallMap.isEqual(key, value)) result = false;
     }
     this.map.forEach(isEqual);

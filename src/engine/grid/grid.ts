@@ -79,9 +79,9 @@ export default class Grid {
     for (let y = 0; y < this.height; y++) {
       const filledCells = [];
       for (let x = 0; x < this.width; x++) {
-        if (this.cells.get(new Point(x, y))) filledCells.push([x, y]);
+        const p = new Point(x, y);
+        if (this.cells.get(p)) filledCells.push(p);
       }
-      // @ts-ignore
       if (filledCells.length === this.width) result.push(...filledCells);
     }
     return result;
@@ -92,9 +92,9 @@ export default class Grid {
     for (let x = 0; x < this.width; x++) {
       const filledCells = [];
       for (let y = 0; y < this.height; y++) {
-        if (this.cells.get(new Point(x, y))) filledCells.push([x, y]);
+        const p = new Point(x, y);
+        if (this.cells.get(p)) filledCells.push(p);
       }
-      // @ts-ignore
       if (filledCells.length === this.height) result.push(...filledCells);
     }
     return result;
